@@ -15,16 +15,18 @@ def square(n):
 
 def dispatcher(command, arg):
     """ Does things """
-    if command == "weather":
+    command = command.upper() #Case does not matter
+
+    if command == "WEATHER":
         print("Here's the weather forcast for "+arg)
         print(apis.fetch_weather(arg))
-    if command == "square":
+    if command == "SQUARE":
         print("The square of " + arg + " is " + str(square(int(arg))))
-    elif command == "go away":
+    elif command == "GO AWAY":
         print("It sounds like you no longer need my assistance")
         print("Very well. Goodbye!")
         return 
-    elif command == "bye":
+    elif command == "BYE":
         print("Goodbye! Have a good day!")
         return
     # Reprompt the user. 
